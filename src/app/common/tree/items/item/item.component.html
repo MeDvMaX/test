@@ -1,0 +1,8 @@
+<div [hidden]="!item.visible">
+  <li class="tree-item" [ngClass]="haveChilds ? 'have-childs' : 'none-childs'" (click)="onItemClick()">
+    {{ item.title }}
+  </li>
+
+  <tree-items *ngIf="haveChilds" [hidden]="visibleChilds" [items]="item.items">
+  </tree-items>
+</div>
